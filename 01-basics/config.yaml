@@ -1,0 +1,15 @@
+name: 01-basics
+tables:
+  - name: Customer
+    columns:
+      - name: email
+      - name: firstName
+      - name: lastName
+    storage:
+      path: customer.csv
+  - name: Country
+    columns:
+      - name: code
+      - name: name
+    storage:
+      path: countries.properties

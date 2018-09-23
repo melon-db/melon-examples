@@ -1,0 +1,27 @@
+name: 03-basics-relation
+tables:
+  - name: Country
+    columns:
+      - name: code
+        primary: true
+      - name: name
+    storage:
+      path: countries.properties
+  - name: Customer
+    columns:
+      - name: email
+        primary: true
+      - name: firstName
+      - name: lastName
+      - name: countryCode
+        reference: Country
+    storage:
+      path: customer.csv
+views:
+  - name: UserWithCountry
+    query: >
+      SELECT User.lastName as "Last Name", User.firstName as "First Name", Country.name as "Country"
+      FROM User
+      LEFT OUTER JOIN Country
+        ON Country.code = User.countryCode
+      ORDER BY User.lastName
