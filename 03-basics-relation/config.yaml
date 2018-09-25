@@ -18,10 +18,10 @@ tables:
     storage:
       path: customer.csv
 views:
-  - name: UserWithCountry
+  - name: CustomerWithCountry
     query: >
-      SELECT User.lastName as "Last Name", User.firstName as "First Name", Country.name as "Country"
-      FROM User
+      SELECT Customer.lastName as "Last Name", Customer.firstName as "First Name", Country.name as "Country"
+      FROM Customer
       LEFT OUTER JOIN Country
-        ON Country.code = User.countryCode
-      ORDER BY User.lastName
+        ON Country.code = Customer.countryCode
+      ORDER BY Customer.lastName
