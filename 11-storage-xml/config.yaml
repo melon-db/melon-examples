@@ -30,5 +30,4 @@ tables:
       properties:
         xml-record-path: /countries/country
         xml-indent: 4
-        xml-linebreak: \n
         xml-format: Attributes
