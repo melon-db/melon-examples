@@ -26,7 +26,7 @@ tables:
       - name: area
       - name: flag
     storage:
-      path: countries.xml
+      uri: countries.xml
       properties:
         xml-record-path: /countries/country
         xml-indent: 4

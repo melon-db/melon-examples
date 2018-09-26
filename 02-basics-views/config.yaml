@@ -7,13 +7,13 @@ tables:
       - name: lastName
       - name: countryCode
     storage:
-      path: customer.csv
+      uri: customer.csv
   - name: Country
     columns:
       - name: code
       - name: name
     storage:
-      path: countries.properties
+      uri: countries.properties
 views:
   - name: CustomerWithCountry
     query: >

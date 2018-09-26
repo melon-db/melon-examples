@@ -6,7 +6,7 @@ tables:
         primary: true
       - name: name
     storage:
-      path: countries.properties
+      uri: countries.properties
   - name: Customer
     columns:
       - name: email
@@ -16,7 +16,7 @@ tables:
       - name: countryCode
         reference: Country
     storage:
-      path: customer.csv
+      uri: customer.csv
 views:
   - name: CustomerWithCountry
     query: >
