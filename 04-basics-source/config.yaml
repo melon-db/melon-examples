@@ -1,0 +1,32 @@
+name: 03-basics-relation
+tables:
+  - name: Country
+    columns:
+      - name: code
+        primary: true
+      - name: name
+    storage:
+      uri: countries.properties
+  - name: Customer
+    columns:
+      - name: email
+        primary: true
+      - name: firstName
+      - name: lastName
+      - name: countryCode
+        reference: Country
+    storage:
+      uri: customer.csv
+  - name: CustomerWithCountry
+    columns:
+      - name: email
+        primary: true
+      - name: fName
+        source: firstName
+      - name: lastName
+      - name: countryCode
+        source: countryCode.code
+      - name: countryName
+        source: countryCode.name
+    storage:
+      uri: melon:///Customer
