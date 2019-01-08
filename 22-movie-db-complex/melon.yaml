@@ -1,0 +1,40 @@
+name: Movies
+tables:
+  - name: Movie
+    columns:
+      - name: Identifier
+        primary: true
+      - name: Year
+      - name: Country
+    storage:
+      uri: movies.xml
+  - name: Movie_en
+    columns:
+      - name: Identifier
+        primary: true
+        reference: Movie
+      - name: Name
+    storage:
+      uri: movies_en.properties
+  - name: Movie_de
+    columns:
+      - name: Identifier
+        primary: true
+        reference: Movie
+      - name: Name
+    storage:
+      uri: movies_de.properties
+  - name: Movie_Full
+    columns:
+      - name: Identifier
+        primary: true
+      - name: Year
+      - name: Country
+      - name: Name_en
+        reference: Movie_en
+        source: Identifier
+      - name: Name_de
+        reference: Movie_de
+        source: Identifier
+    storage:
+      uri: melon:///Movie
